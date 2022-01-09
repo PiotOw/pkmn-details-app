@@ -1,0 +1,9 @@
+<div class="pokemon" *ngIf="pokemon">
+  <div class="section">
+    <pok-overview [pokemon]="this.pokemon"></pok-overview>
+  </div>
+  <pok-stats [stats]="this.pokemon.stats"></pok-stats>
+  <div class="card evo">
+
+  </div>
+</div>

@@ -1,0 +1,127 @@
+@import '../../../../variables';
+@import '../../../../color-scheme';
+
+$height: 600px;
+
+.card {
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	box-shadow: 0px 0px 25px 5px #111111;
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% + 30px), 0% calc(100% + 30px));
+
+	.background {
+		position: absolute;
+		left: 0px;
+		opacity: 0.3;
+
+		.background-primary {
+			position: absolute;
+			width: 100vw;
+			height: $height;
+		}
+
+		.background-secondary {
+			position: absolute;
+			width: 100vw;
+			height: $height;
+		}
+	}
+	.dual-type {
+
+		.background-primary {
+			clip-path: polygon(0 0, 0% 100%, 100% 100%);
+		}
+
+		.background-secondary {
+			clip-path: polygon(0 0, 100% 0, 100% 100%);
+		}
+	}
+
+	.content {
+		height: $height;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		z-index: 1;
+		padding-top: 100px;
+
+		.column {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+
+			&:first-child {
+				width: 200px
+			}
+
+			&:nth-child(2) {
+				width: 300px
+			}
+
+			.pika-ruler {
+				width: 200px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			.overview {
+				width: 300px;
+				margin-right: -100px;
+			}
+			.type-emblem {
+				margin-bottom: 80px;
+			}
+			.info {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				font-size: 18px;
+				font-weight: normal;
+				padding-bottom: 40px;
+				&:last-child {
+					padding-bottom: 0px;
+				}
+				.value {
+					font-size: 28px;
+					font-weight: bold;
+					display: flex;
+					flex-direction: row;
+
+					span {
+						&:nth-child(2) {
+							margin-left: 10px;
+						}
+					}
+				}
+				.pikachus {
+					font-size: 12px;
+					font-weight: normal;
+				}
+			}
+		}
+		.name {
+			width: 500px;
+			text-align: center;
+			font-size: 85px;
+			font-weight: bold;
+			padding-bottom: 45px;
+		}
+	}
+	.sprite {
+		width: 500px;
+		image-rendering: pixelated;
+	}
+}
+
+pok-pika-ruler {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

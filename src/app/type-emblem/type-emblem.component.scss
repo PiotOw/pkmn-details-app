@@ -1,0 +1,101 @@
+@import "../../variables";
+@import "../../color-scheme";
+
+.primary-color {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 170px;
+	height: 170px;
+	border-radius: 50%;
+}
+
+.active {
+	.primary-color {
+		box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.4);
+	}
+	&:hover {
+		.primary-color {
+			transition: $transition;
+			filter: brightness(120%);
+		}
+		.secondary-color {
+			transition: $transition;
+			filter: brightness(90%);
+			box-shadow: inset 0px 0px 75px 0px rgba(0, 0, 0, 0.6);
+		}
+	}
+
+}
+
+.type-emblem {
+	width: 170px;
+	height: 170px;
+}
+
+.secondary-color {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+}
+
+.icon {
+	height: 90px;
+	width: 90px;
+	opacity: 0.8;
+	filter: invert(1);
+}
+
+.type-label {
+	font-weight: bolder;
+	font-size: 15px;
+	opacity: 0.8;
+	color: white;
+	margin-top: 5px;
+}
+
+.one-type {
+	position: relative;
+}
+
+.icon-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+
+.two-types {
+	.icon {
+		width: 35px;
+		height: 35px;
+		font-weight: normal;
+	}
+	.type-label {
+		font-size: 11px;
+	}
+	.half {
+		&:first-child {
+			position: absolute;
+			clip-path: polygon(-75px -75px, 0% calc(100% + 75px), calc(100% + 75px) calc(100% + 75px));
+			.icon-text {
+				right: 52%;
+				top: 51%;
+			}
+		}
+		&:last-child {
+			position: relative;
+			clip-path: polygon(-75px -75px, calc(100% + 75px) 0px, calc(100% + 75px) calc(100% + 75px));
+			.icon-text {
+				left: 51%;
+				bottom: 51%;
+			}
+		}
+	}
+}

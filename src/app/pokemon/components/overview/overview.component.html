@@ -1,0 +1,67 @@
+<div class="card" *ngIf="pokemon">
+	<div class="background" [ngClass]="{'dual-type': pokemon.types.length > 1}">
+		<div class="{{pokemon.types[0].type.name}}">
+			<div class="background-primary primary-color">
+			</div>
+		</div>
+		<div *ngIf="pokemon.types.length > 1" class="{{pokemon.types[1].type.name}}">
+			<div class="background-secondary primary-color">
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="column">
+			<div class="pika-ruler">
+				<pok-pika-ruler [pokemon]="pokemon"></pok-pika-ruler>
+			</div>
+		</div>
+
+		<div class="column">
+			<div class="overview">
+				<div class="info">
+					<div>
+						Height:
+					</div>
+					<div class="value">
+						{{pokemon.height * 10 + 'cm'}}
+					</div>
+					<div class="pikachus">
+						{{pikachuService.getHeightInPickachus(pokemon.height) + (pikachuService.getHeightInPickachus(pokemon.height) > 1 ? ' Pikachus' : ' Pikachu')}}
+					</div>
+				</div>
+				<div class="info">
+					<div>
+						Weight:
+					</div>
+					<div class="value">
+						{{pokemon.weight / 10 + "kg"}}
+					</div>
+					<div class="pikachus">
+						{{pikachuService.getWeightInPikachus(pokemon.weight) + (pikachuService.getWeightInPikachus(pokemon.weight) > 1 ? ' Pikachus' : ' Pikachu')}}
+					</div>
+				</div>
+				<div class="info">
+					<div>
+						Damage Type<span *ngIf="pokemon.types && pokemon.types.length > 1">s</span>:
+					</div>
+					<div class="value">
+						<span *ngFor="let type of pokemon.types">
+							{{type.type.name}}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="name">
+				{{pokemon.name | uppercase}}
+			</div>
+			<div class="type-emblem">
+				<pok-type-emblem [types]="pokemon.types" [active]="false"></pok-type-emblem>
+			</div>
+		</div>
+		<div class="column">
+			<img class="sprite" src="{{url}}">
+		</div>
+	</div>
+</div>

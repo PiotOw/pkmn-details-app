@@ -1,0 +1,17 @@
+@import '../../../../variables';
+
+.pika-ruler {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	position: absolute;
+	bottom: 22%;
+
+	.pikachu {
+		opacity: 0.8;
+		filter: brightness(0);
+		margin-top: -10%;
+		margin-bottom: -10%;
+	}
+}

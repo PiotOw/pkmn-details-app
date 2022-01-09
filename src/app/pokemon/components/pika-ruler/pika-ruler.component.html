@@ -1,0 +1,7 @@
+<div class="pika-ruler">
+	<img src="../../../assets/icons/pikachu.png" class="pikachu" id="first"
+		 [ngStyle]="{'height.px': this.pikachusHeight}">
+	<img *ngFor="let i of [].constructor(this.pikaHeightRound)"
+		 src="../../../assets/icons/pikachu.png" class="pikachu"
+		 [ngStyle]="{'height.px': this.pikachusHeight}">
+</div>

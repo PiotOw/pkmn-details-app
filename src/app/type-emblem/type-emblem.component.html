@@ -1,0 +1,43 @@
+<div class="type-emblem" [ngClass]="{'active': active}">
+  <div class="one-type" *ngIf="types.length === 1">
+    <div class="{{types[0].type.name}}">
+      <div class="primary-color mat-elevation-z10">
+        <div class="secondary-color">
+          <img class="icon"
+               src="{{'../../../assets/icons/type-icons/' + typeIconService.getIconByType(types[0].type.name)}}">
+          <span class="type-label">
+				{{types[0].type.name | uppercase}}
+			</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="two-types" *ngIf="types.length === 2">
+    <div class="{{types[0].type.name}} half">
+      <div class="primary-color">
+        <div class="secondary-color">
+          <div class="icon-text">
+            <img class="icon"
+                 src="{{'../../../assets/icons/type-icons/' + typeIconService.getIconByType(types[0].type.name)}}">
+            <span class="type-label">
+						{{types[0].type.name | uppercase}}
+					</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="{{types[1].type.name}} half">
+      <div class="primary-color">
+        <div class="secondary-color">
+          <div class="icon-text">
+            <img class="icon"
+                 src="{{'../../../assets/icons/type-icons/' + typeIconService.getIconByType(types[1].type.name)}}">
+            <span class="type-label">
+						{{types[1].type.name | uppercase}}
+					</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="card stats">
+	<div class="title">
+		STATS
+	</div>
+	<div class="content">
+		<div class="stats-container">
+			<div *ngFor="let stat of this.stats">
+				<pok-stat-card class="stat" [stat]="stat"></pok-stat-card>
+			</div>
+		</div>
+	</div>
+</div>

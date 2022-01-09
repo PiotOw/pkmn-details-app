@@ -1,0 +1,37 @@
+@import '../../../../variables';
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100vw;
+	box-shadow: 0px 0px 25px 5px #111111;
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% + 30px), 0% calc(100% + 30px));
+	.title {
+		width: 100%;
+		z-index: 0;
+		padding: 20px;
+		font-size: 60px;
+		font-weight: bold;
+		text-align: center;
+		background-color: $medium-dark-gray;
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 60px;
+		.stats-container {
+			width: 660px;
+			.stat {
+				margin-right: 30px;
+				:last-child {
+					margin-bottom: 0px;
+				}
+				float: left;
+				margin-bottom: 60px;
+			}
+		}
+	}
+}

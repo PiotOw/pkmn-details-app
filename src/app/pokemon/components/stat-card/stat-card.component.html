@@ -1,0 +1,15 @@
+<div class="card" *ngIf="stat">
+	<div class="stat-emblem">
+		<div class="circle">
+			<svg height="80" width="80">
+				<circle cx="40" cy="40" r="37" stroke="rgba(255, 255, 255, 0.8)" stroke-width="6" fill="none"/>
+				Sorry, your browser does not support inline SVG.
+			</svg>
+		<img class="icon" src="{{'../../../assets/icons/stat-icons/' + statIconService.getIconByStat(stat.stat.name)}}">
+		</div>
+	</div>
+	<div class="description">
+		<span class="stat-name">{{stat.stat.name | uppercase}}</span>
+		<span class="stat-value">{{stat.base_stat}}</span>
+	</div>
+</div>
